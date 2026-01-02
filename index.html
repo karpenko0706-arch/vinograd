@@ -1,0 +1,1921 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Колекційні та рідкісні сорти винограду від Геннадія. Купити елітні саджанці винограду з доставкою по Україні">
+    <meta name="keywords" content="виноград, саджанці, кишмиш, колекційні сорти, рідкісні сорти, виноградник">
+    <title>Геннадій Виноград — Колекційні та рідкісні сорти винограду</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('https://i.postimg.cc/pr6p2WLx/krasnyi-vinograd-na-vinogradnike-(1).jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Маленькая кнопка YouTube слева */
+        .youtube-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+            padding: 12px 25px;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: clamp(0.9em, 2vw, 1.1em);
+            box-shadow: 0 4px 15px rgba(255,0,0,0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            z-index: 999;
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .youtube-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255,0,0,0.6);
+            border-color: white;
+        }
+
+        /* Языковой переключатель по центру в шапке */
+        .language-switcher {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            z-index: 1002;
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            padding: 6px 12px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 0.8em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .lang-btn.active {
+            background: rgba(74, 124, 89, 0.8);
+            color: white;
+        }
+
+        .lang-btn:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        header {
+            background: rgba(0,0,0,0.4);
+            color: white;
+            text-align: center;
+            padding: 120px 20px 80px;
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        h1 { 
+            font-size: clamp(2.5em, 5vw, 3.5em); 
+            margin: 0; 
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            color: white;
+        }
+
+        .slogan { 
+            font-size: clamp(1.2em, 3vw, 1.8em); 
+            margin: 20px 0; 
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+            opacity: 0.95;
+        }
+
+        .contact-buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            z-index: 2;
+        }
+
+        .viber-header {
+            background: linear-gradient(135deg, #7360F2 0%, #8B7AF3 100%);
+            padding: 12px 25px;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: clamp(0.9em, 2vw, 1.1em);
+            box-shadow: 0 4px 15px rgba(115,96,242,0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .viber-header:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(115,96,242,0.6);
+            border-color: white;
+        }
+
+        .viber-header img { 
+            width: 28px; 
+            height: 28px; 
+        }
+
+        /* Корзина - компактная версия */
+        #cart-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 20px;
+            border-radius: 15px;
+            color: #333;
+            width: 380px;
+            max-width: 90vw;
+            z-index: 1000;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(115, 96, 242, 0.3);
+            display: none;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        #cart-container.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #cart h3 { 
+            margin-top:0; 
+            font-size:1.3em; 
+            color: #4a7c59;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        #cart-items {
+            max-height: 300px;
+            overflow-y: auto;
+            margin: 15px 0;
+            font-size: 0.95em;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(74,124,89,0.2);
+        }
+
+        .cart-item:last-child { border-bottom: none; }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity-btn {
+            background: #4a7c59;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.2s;
+        }
+
+        .quantity-btn:hover {
+            background: #3a6b49;
+            transform: scale(1.1);
+        }
+
+        .remove-item {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: all 0.2s;
+        }
+
+        .remove-item:hover {
+            background: #c0392b;
+            transform: scale(1.1);
+        }
+
+        #cart-total { 
+            font-weight:bold; 
+            margin: 20px 0 10px; 
+            font-size: 1.3em; 
+            color: #4a7c59;
+            text-align: right;
+            padding-top: 15px;
+            border-top: 2px solid #4a7c59;
+        }
+
+        /* Кнопка Viber в корзине */
+        #cart-viber-btn {
+            background: linear-gradient(135deg, #7360F2 0%, #8B7AF3 100%);
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(115,96,242,0.3);
+        }
+
+        #cart-viber-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(115,96,242,0.5);
+        }
+
+        #cart-viber-btn:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Кнопка корзины - только иконка с количеством */
+        .cart-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(74, 124, 89, 0.95);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            z-index: 1001;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid white;
+            backdrop-filter: blur(5px);
+        }
+
+        .cart-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            background: rgba(74, 124, 89, 1);
+        }
+
+        #cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #e74c3c;
+            color: white;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: bold;
+            border: 3px solid white;
+        }
+
+        .products-section {
+            background: white;
+            margin: 40px auto;
+            padding: 40px 20px 80px;
+            max-width: 1400px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+            position: relative;
+        }
+
+        h2 {
+            text-align: center;
+            color: #4a7c59;
+            font-size: clamp(2em, 4vw, 2.8em);
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #4a7c59, #8B7AF3);
+            border-radius: 2px;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            background: #f8f9fa;
+            border: 2px solid #4a7c59;
+            border-radius: 50px;
+            color: #4a7c59;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: #4a7c59;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(74,124,89,0.3);
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            border: 1px solid #f0f0f0;
+        }
+
+        .product:hover { 
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        /* ГАЛЕРЕЯ ДЛЯ ТОВАРА */
+        .product-gallery {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .product-gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            cursor: pointer;
+        }
+
+        .product-gallery img.active {
+            opacity: 1;
+        }
+
+        .gallery-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .gallery-btn {
+            background: rgba(74, 124, 89, 0.3);
+            border: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            padding: 0;
+            font-size: 0;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-btn.active {
+            background: #4a7c59;
+            transform: scale(1.2);
+        }
+
+        .gallery-btn:hover {
+            background: rgba(74, 124, 89, 0.7);
+        }
+
+        .gallery-fullscreen-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-fullscreen-btn:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: scale(1.1);
+        }
+
+        .product h3 { 
+            color:#4a7c59; 
+            padding:20px 15px 10px; 
+            margin:0; 
+            font-size:1.4em; 
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product p { 
+            padding:0 15px 20px; 
+            font-size:0.95em;
+            color: #666;
+            min-height: 80px;
+        }
+
+        .product-price {
+            font-size: 1.6em;
+            color: #4a7c59;
+            font-weight: bold;
+            margin: 10px 0;
+            display: block;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 10px;
+            padding: 0 15px 20px;
+        }
+
+        .product button.add-to-cart {
+            flex: 1;
+            background: linear-gradient(135deg, #4a7c59 0%, #5a8c69 100%);
+            color:white;
+            padding:14px;
+            border:none;
+            cursor:pointer;
+            font-weight:bold;
+            border-radius:10px;
+            transition: all 0.3s ease;
+            font-size: 1em;
+        }
+
+        .product button.add-to-cart:hover {
+            background: linear-gradient(135deg, #3a6b49 0%, #4a7c59 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(74,124,89,0.3);
+        }
+
+        .product button.info-btn {
+            background: #f8f9fa;
+            color: #4a7c59;
+            border: 2px solid #4a7c59;
+            padding: 14px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .product button.info-btn:hover {
+            background: #4a7c59;
+            color: white;
+        }
+
+        .product-description {
+            display: none;
+            padding: 20px;
+            text-align: left;
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            margin: 15px;
+            border-left: 4px solid #4a7c59;
+        }
+
+        .product-description h4 {
+            color: #4a7c59;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .product-description ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        .product-description li {
+            margin-bottom: 8px;
+        }
+
+        /* Стили для Viber инструкции */
+        #viber-help-panel {
+            background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 40px 0 30px;
+            border: 2px solid #7360F2;
+            position: relative;
+        }
+
+        #viber-help-panel h3 {
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            background: #7360F2;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .instruction-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .step-number {
+            background: #7360F2;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-weight: bold;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        /* Большая кнопка Viber */
+        #viber-order-btn {
+            position: relative;
+            background: linear-gradient(135deg, #7360F2 0%, #5A4FCF 100%);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            padding: 25px 30px;
+            font-size: 22px;
+            font-weight: bold;
+            width: 100%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            box-shadow: 0 10px 30px rgba(115, 96, 242, 0.4);
+            transition: all 0.3s ease;
+            margin: 30px 0;
+        }
+
+        #viber-order-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(115, 96, 242, 0.6);
+        }
+
+        #viber-order-btn .pulse {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 12px;
+            height: 12px;
+            background: #00FF00;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 255, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 255, 0, 0); }
+        }
+
+        footer {
+            background: linear-gradient(135deg, #4a7c59 0%, #3a6b49 100%);
+            color:white;
+            text-align:center;
+            padding:50px 20px;
+            margin-top:50px;
+            font-size:1.1em;
+        }
+
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #4a7c59;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 1001;
+            animation: slideInRight 0.5s ease, fadeOut 0.5s ease 2.5s forwards;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Модальное окно для инструкций Viber */
+        .viber-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .viber-modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            position: relative;
+            animation: slideUp 0.4s ease;
+        }
+
+        .viber-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .viber-modal-close:hover {
+            background: #f0f0f0;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .youtube-button {
+                top: 15px;
+                left: 15px;
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+            
+            .language-switcher {
+                top: 15px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .lang-btn {
+                padding: 5px 10px;
+                font-size: 0.75em;
+            }
+            
+            header {
+                padding: 100px 15px 60px;
+            }
+            
+            .contact-buttons {
+                position: static;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+            
+            .viber-header {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+                margin-bottom: 10px;
+            }
+            
+            #cart-container {
+                position: fixed;
+                top: 80px;
+                right: 15px;
+                left: 15px;
+                width: auto;
+                max-width: none;
+            }
+            
+            .cart-toggle {
+                top: 15px;
+                right: 15px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.5em;
+            }
+            
+            #cart-count {
+                width: 22px;
+                height: 22px;
+                font-size: 0.8em;
+            }
+            
+            #viber-order-btn {
+                padding: 20px;
+                font-size: 18px;
+                gap: 15px;
+            }
+            
+            .instruction-step {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .youtube-button {
+                padding: 8px 15px;
+                font-size: 0.8em;
+                gap: 5px;
+            }
+            
+            .products {
+                grid-template-columns: 1fr;
+            }
+            
+            .viber-modal-content {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Маленькая фиксированная кнопка YouTube слева -->
+<a href="https://youtube.com/@gen_vin?si=Sv-_MztqFarN_qWV" target="_blank" class="youtube-button">
+    <i class="fab fa-youtube"></i>
+    <span class="lang" data-uk="YouTube канал" data-ru="YouTube канал">YouTube канал</span>
+</a>
+
+<header>
+    <div class="contact-buttons">
+        <a href="viber://chat?number=+380683672422" class="viber-header">
+            <i class="fab fa-viber"></i>
+            Замовити у Viber: 068 367 24 22
+        </a>
+    </div>
+    
+    <!-- Языковой переключатель по центру в шапке -->
+    <div class="language-switcher">
+        <button class="lang-btn active" onclick="changeLanguage('uk')">УКР</button>
+        <button class="lang-btn" onclick="changeLanguage('ru')">РУС</button>
+    </div>
+    
+    <h1 class="site-title">
+        <span class="lang" data-uk="Геннадій Виноград" data-ru="Геннадий Виноград">Геннадій Виноград</span>
+    </h1>
+    <p class="slogan lang" data-uk="Колекційні та рідкісні сорти винограду 💚" 
+       data-ru="Коллекционные и редкие сорта винограда 💚">
+       Колекційні та рідкісні сорти винограду 💚
+    </p>
+</header>
+
+<!-- Кнопка корзины (только иконка) -->
+<div class="cart-toggle" onclick="toggleCart()">
+    <i class="fas fa-shopping-cart"></i>
+    <span id="cart-count">0</span>
+</div>
+
+<!-- Корзина (скрыта по умолчанию) -->
+<div id="cart-container">
+    <div id="cart">
+        <h3><i class="fas fa-shopping-cart"></i> <span class="lang" data-uk="Ваш кошик" data-ru="Ваша корзина">Ваш кошик</span></h3>
+        <div id="cart-items"><span class="lang" data-uk="Поки що порожньо" data-ru="Пока пусто">Поки що порожньо</span></div>
+        <div id="cart-total"><span class="lang" data-uk="Сума:" data-ru="Сумма:">Сума:</span> 0 ₴</div>
+        
+        <!-- Кнопка Viber в корзине -->
+        <button id="cart-viber-btn" onclick="sendViberOrder()" disabled>
+            <i class="fab fa-viber"></i>
+            <span class="lang" data-uk="Надіслати у Viber" data-ru="Отправить в Viber">Надіслати у Viber</span>
+        </button>
+        
+        <!-- Напоминание в корзине -->
+        <div id="cart-reminder" style="
+            background: #E8F5E9;
+            border-left: 4px solid #4CAF50;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-size: 0.9em;
+            display: none;
+        ">
+            <strong><i class="fas fa-info-circle"></i> Нагадування:</strong>
+            <p style="margin: 5px 0 0 0; color: #666;">
+                Текст замовлення скопіюється автоматично. Просто відправте його у Viber чаті з Геннадієм.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Товари на білому фоні -->
+<div class="products-section">
+    <div class="container">
+        <h2><span class="lang" data-uk="Мої сорти винограду" data-ru="Мои сорта винограда">Мої сорти винограду</span></h2>
+        
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterProducts('all')">
+                <span class="lang" data-uk="Всі сорти" data-ru="Все сорта">Всі сорти</span>
+            </button>
+            <button class="filter-btn" onclick="filterProducts('new')">
+                <span class="lang" data-uk="Новинки" data-ru="Новинки">Новинки</span>
+            </button>
+        </div>
+        
+        <div class="products" id="products-container">
+
+            <!-- Кишмиш Шугра 48 -->
+            <div class="product" data-category="new">
+                <!-- Галерея с несколькими фото -->
+                <div class="product-gallery" data-gallery-id="shugra48">
+                    <!-- Основное фото -->
+                    <img src="https://i.postimg.cc/Jn71gSc0/midnight-beauty-seedless-black-grape-6843.jpg" 
+                         alt="Кишмиш Шугра 48" class="active" 
+                         onclick="openGallery('shugra48', 0)">
+                    <!-- Второе фото -->
+                    <img src="https://i.postimg.cc/C1ZFSktm/a0f4ae4b-6c18-470f-aed3-3797ecc3ed93.jpg" 
+                         alt="Кишмиш Шугра 48 фото 2" 
+                         onclick="openGallery('shugra48', 1)">
+                    <!-- Кнопка полноэкранного просмотра -->
+                    <button class="gallery-fullscreen-btn" onclick="openGallery('shugra48', 0)">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+                
+                <!-- Контролы галереи -->
+                <div class="gallery-controls">
+                    <button class="gallery-btn active" onclick="changePhoto('shugra48', 0)">●</button>
+                    <button class="gallery-btn" onclick="changePhoto('shugra48', 1)">●</button>
+                </div>
+                
+                <h3>Кишмиш Шугра 48 (Sugra 48 seedless)</h3>
+                <p class="lang" data-uk="Класичний чорний кишмиш преміум-класу. Еталон якості з натурально великими ягодами" 
+                   data-ru="Классический черный кишмиш премиум-класса. Эталон качества с натурально крупными ягодами">
+                   Класичний чорний кишмиш преміум-класу
+                </p>
+                <span class="product-price">2000 ₴</span>
+                
+                <div class="product-actions">
+                    <button class="info-btn" onclick="toggleDescription(this)">
+                        <i class="fas fa-info-circle"></i>
+                    </button>
+                    <button class="add-to-cart" onclick="addToCart('Кишмиш Шугра 48', 2000)">
+                        <i class="fas fa-cart-plus"></i> 
+                        <span class="lang" data-uk="Додати" data-ru="Добавить">Додати</span>
+                    </button>
+                </div>
+                
+                <div class="product-description">
+                    <h4 class="lang" data-uk="Характеристики сорту:" data-ru="Характеристики сорта:">Характеристики сорту:</h4>
+                    <ul>
+                        <li><strong class="lang" data-uk="Термін дозрівання:" data-ru="Срок созревания:">Термін дозрівання:</strong> 
+                            <span class="lang" data-uk="середньоранній (серпень–вересень)" data-ru="среднеранний (август–сентябрь)">середньоранній</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Вага грона:" data-ru="Вес грозди:">Вага грона:</strong> 700–1200 г</li>
+                        <li><strong class="lang" data-uk="Вага ягоди:" data-ru="Вес ягоды:">Вага ягоди:</strong> 7–11 г</li>
+                        <li><strong class="lang" data-uk="Розмір ягоди:" data-ru="Размер ягоды:">Розмір ягоди:</strong> 22–28 мм</li>
+                        <li><strong class="lang" data-uk="Колір ягоди:" data-ru="Цвет ягоды:">Колір ягоди:</strong> 
+                            <span class="lang" data-uk="глибокий чорний" data-ru="глубокий черный">глибокий чорний</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Смак:" data-ru="Вкус:">Смак:</strong> 
+                            <span class="lang" data-uk="нейтрально-солодкий, гармонійний, з легкими фруктовими нотками" data-ru="neutral-sweet, harmonious, with light fruity notes">нейтрально-солодкий, гармонійний</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Кишмиш Чорнобаївка -->
+            <div class="product" data-category="new">
+                <div class="product-gallery" data-gallery-id="chornobaivka">
+                    <img src="https://i.postimg.cc/Y0Mqy0tv/youtu-be-nlf-Ub0j7EWI.jpg" 
+                         alt="Кишмиш Чорнобаївка" class="active" 
+                         onclick="openGallery('chornobaivka', 0)">
+                    <button class="gallery-fullscreen-btn" onclick="openGallery('chornobaivka', 0)">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+                
+                <div class="gallery-controls">
+                    <button class="gallery-btn active" onclick="changePhoto('chornobaivka', 0)">●</button>
+                </div>
+                
+                <h3>Кишмиш Чорнобаївка</h3>
+                <p class="lang" data-uk="Символ стійкості та щедрості. Безнасінний сорт з великими гронами" 
+                   data-ru="Символ стойкости и щедрости. Бессемянный сорт с крупными гроздьями">
+                   Символ стійкості та щедрості. Безнасінний сорт з великими гронами
+                </p>
+                <span class="product-price">500 ₴</span>
+                
+                <div class="product-actions">
+                    <button class="info-btn" onclick="toggleDescription(this)">
+                        <i class="fas fa-info-circle"></i>
+                    </button>
+                    <button class="add-to-cart" onclick="addToCart('Кишмиш Чорнобаївка', 500)">
+                        <i class="fas fa-cart-plus"></i> 
+                        <span class="lang" data-uk="Додати" data-ru="Добавить">Додати</span>
+                    </button>
+                </div>
+                
+                <div class="product-description">
+                    <h4 class="lang" data-uk="Характеристики сорту:" data-ru="Характеристики сорта:">Характеристики сорту:</h4>
+                    <ul>
+                        <li><strong class="lang" data-uk="Термін дозрівання:" data-ru="Срок созревания:">Термін дозрівання:</strong> 
+                            <span class="lang" data-uk="ранній (серпень-вересень)" data-ru="ранний (август-сентябрь)">ранній (серпень-вересень)</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Вага грона:" data-ru="Вес грозди:">Вага грона:</strong> 650–900 г</li>
+                        <li><strong class="lang" data-uk="Вага ягоди:" data-ru="Вес ягоды:">Вага ягоди:</strong> 10–14 г</li>
+                        <li><strong class="lang" data-uk="Колір ягоди:" data-ru="Цвет ягоды:">Колір ягоди:</strong> 
+                            <span class="lang" data-uk="темно-синій" data-ru="темно-синий">темно-синій</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Кишмиш Азак -->
+            <div class="product" data-category="new">
+                <div class="product-gallery" data-gallery-id="azak">
+                    <img src="https://i.postimg.cc/wvFxKvSp/vynohrad-kysh-mysh-tsymus-duzhe-ranniy-zhovtyy.jpg" 
+                         alt="Кишмиш Азак" class="active" 
+                         onclick="openGallery('azak', 0)">
+                    <button class="gallery-fullscreen-btn" onclick="openGallery('azak', 0)">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+                
+                <div class="gallery-controls">
+                    <button class="gallery-btn active" onclick="changePhoto('azak', 0)">●</button>
+                </div>
+                
+                <h3>Кишмиш Азак</h3>
+                <p class="lang" data-uk="Ранній білий кишмиш з хрусткою соковитістю та гармонійним смаком" 
+                   data-ru="Ранний белый кишмиш с хрустящей сочностью и гармоничным вкусом">
+                   Ранній білий кишмиш з хрусткою соковитістю та гармонійним смаком
+                </p>
+                <span class="product-price">500 ₴</span>
+                
+                <div class="product-actions">
+                    <button class="info-btn" onclick="toggleDescription(this)">
+                        <i class="fas fa-info-circle"></i>
+                    </button>
+                    <button class="add-to-cart" onclick="addToCart('Кишмиш Азак', 500)">
+                        <i class="fas fa-cart-plus"></i> 
+                        <span class="lang" data-uk="Додати" data-ru="Добавить">Додати</span>
+                    </button>
+                </div>
+                
+                <div class="product-description">
+                    <h4 class="lang" data-uk="Характеристики сорту:" data-ru="Характеристики сорта:">Характеристики сорту:</h4>
+                    <ul>
+                        <li><strong class="lang" data-uk="Термін дозрівання:" data-ru="Срок созревания:">Термін дозрівання:</strong> 
+                            <span class="lang" data-uk="дуже ранній (початок серпня)" data-ru="очень ранний (начало августа)">дуже ранній (початок серпня)</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Вага грона:" data-ru="Вес грозди:">Вага грона:</strong> до 1000 г</li>
+                        <li><strong class="lang" data-uk="Розмір ягоди:" data-ru="Размер ягоды:">Розмір ягоди:</strong> 18–20 мм</li>
+                        <li><strong class="lang" data-uk="Колір ягоди:" data-ru="Цвет ягоды:">Колір ягоди:</strong> 
+                            <span class="lang" data-uk="янтарно-білий" data-ru="янтарно-белый">янтарно-білий</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Autumn King -->
+            <div class="product" data-category="">
+                <div class="product-gallery" data-gallery-id="autumnking">
+                    <img src="https://i.postimg.cc/HxsTQKzJ/autumn-king2-dbd2a2f5d5c92b152cb7ebe1b5b464f8.jpg" 
+                         alt="Autumn King" class="active" 
+                         onclick="openGallery('autumnking', 0)">
+                    <button class="gallery-fullscreen-btn" onclick="openGallery('autumnking', 0)">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+                
+                <div class="gallery-controls">
+                    <button class="gallery-btn active" onclick="changePhoto('autumnking', 0)">●</button>
+                </div>
+                
+                <h3>Autumn King (Ленд Крузер)</h3>
+                <p class="lang" data-uk="Пізній безнасінний сорт американської селекції з великими гронами" 
+                   data-ru="Поздний бессемянный сорт американской селекции с крупными гроздьями">
+                   Пізній безнасінний сорт американської селекції з великими гронами
+                </p>
+                <span class="product-price">250 ₴</span>
+                
+                <div class="product-actions">
+                    <button class="info-btn" onclick="toggleDescription(this)">
+                        <i class="fas fa-info-circle"></i>
+                    </button>
+                    <button class="add-to-cart" onclick="addToCart('Autumn King', 250)">
+                        <i class="fas fa-cart-plus"></i> 
+                        <span class="lang" data-uk="Додати" data-ru="Добавить">Додати</span>
+                    </button>
+                </div>
+                
+                <div class="product-description">
+                    <h4 class="lang" data-uk="Характеристики сорту:" data-ru="Характеристики сорта:">Характеристики сорту:</h4>
+                    <ul>
+                        <li><strong class="lang" data-uk="Термін дозрівання:" data-ru="Срок созревания:">Термін дозрівання:</strong> 
+                            <span class="lang" data-uk="пізній" data-ru="поздний">пізній</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Походження:" data-ru="Происхождение:">Походження:</strong> 
+                            <span class="lang" data-uk="американська селекція" data-ru="американская селекция">американська селекція</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Особливості:" data-ru="Особенности:">Особливості:</strong> 
+                            <span class="lang" data-uk="безнасінний, великі грона" data-ru="бессемянный, крупные гроздья">безнасінний, великі грона</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Кишмиш Карліта -->
+            <div class="product" data-category="new">
+                <div class="product-gallery" data-gallery-id="carlita">
+                    <img src="https://i.postimg.cc/DfRdMKGF/carlita2-a61422a450ea2184ddb55a2b5cd0e30d.jpg" 
+                         alt="Carlita" class="active" 
+                         onclick="openGallery('carlita', 0)">
+                    <button class="gallery-fullscreen-btn" onclick="openGallery('carlita', 0)">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+                
+                <div class="gallery-controls">
+                    <button class="gallery-btn active" onclick="changePhoto('carlita', 0)">●</button>
+                </div>
+                
+                <h3>Кишмиш Карліта</h3>
+                <p class="lang" data-uk="Інноваційний безнасінний сорт з яскраво-червоними ягодами" 
+                   data-ru="Инновационный бессемянный сорт с ярко-красными ягодами">
+                   Інноваційний безнасінний сорт з яскраво-червоними ягодами
+                </p>
+                <span class="product-price">400 ₴</span>
+                
+                <div class="product-actions">
+                    <button class="info-btn" onclick="toggleDescription(this)">
+                        <i class="fas fa-info-circle"></i>
+                    </button>
+                    <button class="add-to-cart" onclick="addToCart('Carlita', 400)">
+                        <i class="fas fa-cart-plus"></i> 
+                        <span class="lang" data-uk="Додати" data-ru="Добавить">Додати</span>
+                    </button>
+                </div>
+                
+                <div class="product-description">
+                    <h4 class="lang" data-uk="Характеристики сорту:" data-ru="Характеристики сорта:">Характеристики сорту:</h4>
+                    <ul>
+                        <li><strong class="lang" data-uk="Селекція:" data-ru="Селекция:">Селекція:</strong> Sheehan Genetics</li>
+                        <li><strong class="lang" data-uk="Вага грона:" data-ru="Вес грозди:">Вага грона:</strong> 
+                            <span class="lang" data-uk="дуже великі" data-ru="очень крупные">дуже великі</span>
+                        </li>
+                        <li><strong class="lang" data-uk="Вага ягоди:" data-ru="Вес ягоды:">Вага ягоди:</strong> 7–12 г</li>
+                        <li><strong class="lang" data-uk="Колір ягоди:" data-ru="Цвет ягоды:">Колір ягоди:</strong> 
+                            <span class="lang" data-uk="яскраво-червоний" data-ru="ярко-красный">яскраво-червоний</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        
+        <!-- Панель інструкцій Viber -->
+        <div id="viber-help-panel">
+            <h3><i class="fab fa-viber"></i> Як відправити замовлення</h3>
+            
+            <div class="instruction-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <strong>Додайте товари в кошик</strong>
+                    <p>Натисніть "Додати" на потрібних сортах винограду</p>
+                </div>
+            </div>
+            
+            <div class="instruction-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <strong>Натисніть велику кнопку Viber</strong>
+                    <p>Текст замовлення автоматично скопіюється</p>
+                </div>
+            </div>
+            
+            <div class="instruction-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <strong>Відправте у Viber</strong>
+                    <p>Відкриється Viber з чатом "Геннадій" - просто вставте текст та відправте</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Велика кнопка Viber -->
+        <button id="viber-order-btn" onclick="sendViberOrder()">
+            <i class="fab fa-viber"></i>
+            <span class="lang" data-uk="ВІДПРАВИТИ ЗАМОВЛЕННЯ У VIBER" data-ru="ОТПРАВИТЬ ЗАКАЗ В VIBER">ВІДПРАВИТИ ЗАМОВЛЕННЯ У VIBER</span>
+            <div class="pulse"></div>
+        </button>
+
+    </div>
+</div>
+
+<footer>
+    <p><i class="fas fa-seedling"></i> &copy; 2024 <span class="lang" data-uk="Геннадій Виноград. Колекційний виноградник" 
+        data-ru="Геннадий Виноград. Коллекционный виноградник">Геннадій Виноград. Колекційний виноградник</span> 💚</p>
+    <p style="margin-top: 10px; opacity: 0.9;">
+        <i class="fas fa-phone"></i> +380 68 367 24 22 | 
+        <i class="fab fa-viber"></i> <span class="lang" data-uk="Viber доступний" data-ru="Viber доступен">Viber доступний</span> |
+        <i class="fab fa-youtube"></i> <a href="https://youtube.com/@gen_vin?si=Sv-_MztqFarN_qWV" target="_blank" style="color: white; text-decoration: underline;">YouTube канал</a>
+    </p>
+</footer>
+
+<!-- Модальное окно для инструкций -->
+<div id="viber-modal" class="viber-modal" style="display: none;">
+    <div class="viber-modal-content">
+        <button class="viber-modal-close" onclick="closeViberModal()">&times;</button>
+        
+        <h2 style="color: #7360F2; margin-top: 0; margin-bottom: 25px;">
+            <i class="fab fa-viber"></i> Замовлення готове!
+        </h2>
+        
+        <div style="
+            background: #F3E5F5;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 5px solid #9C27B0;
+        ">
+            <p style="margin: 0 0 15px 0; font-size: 18px;">
+                <strong>Текст вашого замовлення скопійовано!</strong>
+            </p>
+            
+            <p style="margin: 0;">
+                Зараз відкриється Viber. Просто вставте текст у чат з <strong>Геннадієм</strong> та відправте.
+            </p>
+        </div>
+        
+        <div style="margin-bottom: 25px;">
+            <h4 style="color: #4a7c59; margin-bottom: 15px;">
+                <i class="fas fa-mobile-alt"></i> Як вставити текст на телефоні:
+            </h4>
+            
+            <div style="
+                background: white;
+                border: 2px solid #e0e0e0;
+                border-radius: 10px;
+                padding: 15px;
+            ">
+                <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                    <div style="
+                        background: #4CAF50;
+                        color: white;
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-right: 12px;
+                        font-weight: bold;
+                    ">1</div>
+                    <div>Відкрийте Viber</div>
+                </div>
+                
+                <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                    <div style="
+                        background: #4CAF50;
+                        color: white;
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-right: 12px;
+                        font-weight: bold;
+                    ">2</div>
+                    <div>Знайдіть чат з <strong>"Геннадій"</strong></div>
+                </div>
+                
+                <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                    <div style="
+                        background: #4CAF50;
+                        color: white;
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-right: 12px;
+                        font-weight: bold;
+                    ">3</div>
+                    <div>
+                        <strong>Натисніть і утримуйте</strong> поле для повідомлення<br>
+                        <small style="color: #666;">(2-3 секунди)</small>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: center;">
+                    <div style="
+                        background: #4CAF50;
+                        color: white;
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-right: 12px;
+                        font-weight: bold;
+                    ">4</div>
+                    <div>Натисніть <strong>"Вставити"</strong> → <strong>"Надіслати"</strong></div>
+                </div>
+            </div>
+        </div>
+        
+        <button onclick="proceedToViber()" style="
+            background: linear-gradient(135deg, #7360F2 0%, #8B7AF3 100%);
+            color: white;
+            padding: 16px 40px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        ">
+            <i class="fab fa-viber"></i> ВІДКРИТИ VIBER ТА ВІДПРАВИТИ
+        </button>
+        
+        <p style="text-align: center; margin-top: 15px; color: #666; font-size: 14px;">
+            Текст вже скопійовано у ваш буфер обміну
+        </p>
+    </div>
+</div>
+
+<script>
+// Глобальные переменные
+let currentLanguage = 'uk';
+let cart = [];
+let cartVisible = false;
+let currentOrderText = '';
+
+// Инициализация при загрузке
+document.addEventListener('DOMContentLoaded', () => {
+    // Загрузка языка
+    const savedLanguage = localStorage.getItem('grapeLanguage');
+    if (savedLanguage) {
+        changeLanguage(savedLanguage);
+    }
+    
+    // Загрузка корзины
+    const savedCart = localStorage.getItem('grapeCart');
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+        renderCart();
+    }
+    
+    // Обновление кнопки Viber в корзине
+    updateCartViberButton();
+    
+    // Сохранение корзины каждые 5 секунд
+    setInterval(() => {
+        localStorage.setItem('grapeCart', JSON.stringify(cart));
+    }, 5000);
+});
+
+// Смена языка
+function changeLanguage(lang) {
+    if (lang === currentLanguage) return;
+    
+    currentLanguage = lang;
+    
+    // Обновляем кнопки переключения языка
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.textContent.includes(lang === 'uk' ? 'УКР' : 'РУС')) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Обновляем все текстовые элементы с классом lang
+    document.querySelectorAll('.lang').forEach(element => {
+        const ukText = element.getAttribute('data-uk');
+        const ruText = element.getAttribute('data-ru');
+        if (ukText && ruText) {
+            element.textContent = lang === 'uk' ? ukText : ruText;
+        }
+    });
+    
+    // Обновляем текст в корзине
+    renderCart();
+    
+    // Обновляем кнопку Viber в корзине
+    updateCartViberButton();
+    
+    // Сохраняем язык
+    localStorage.setItem('grapeLanguage', lang);
+    
+    // Показываем уведомление
+    showNotification(lang === 'uk' ? 'Мову змінено на українську' : 'Язык изменен на русский');
+}
+
+// Добавление в корзину
+function addToCart(name, price) {
+    const existingItem = cart.find(item => item.name === name);
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({ name, price, quantity: 1 });
+    }
+    
+    renderCart();
+    showNotification(currentLanguage === 'uk' 
+        ? `Додано: ${name}` 
+        : `Добавлено: ${name}`);
+    
+    // Обновляем кнопку Viber в корзине
+    updateCartViberButton();
+    
+    // Показываем корзину на 3 секунды
+    if (!cartVisible) {
+        showCartTemporarily();
+    }
+    
+    // Показываем напоминание в корзине
+    showCartReminder();
+}
+
+// Удаление из корзины
+function removeFromCart(name) {
+    const index = cart.findIndex(item => item.name === name);
+    if (index !== -1) {
+        cart.splice(index, 1);
+        showNotification(currentLanguage === 'uk'
+            ? `Видалено: ${name}`
+            : `Удалено: ${name}`);
+    }
+    renderCart();
+    updateCartViberButton();
+}
+
+// Изменение количества
+function updateQuantity(name, change) {
+    const item = cart.find(item => item.name === name);
+    if (item) {
+        item.quantity += change;
+        if (item.quantity < 1) {
+            removeFromCart(name);
+            return;
+        }
+        renderCart();
+        updateCartViberButton();
+    }
+}
+
+// Отрисовка корзины
+function renderCart() {
+    const cartItems = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+    const cartCount = document.getElementById('cart-count');
+
+    if (cart.length === 0) {
+        const emptyText = currentLanguage === 'uk' 
+            ? 'Поки що порожньо' 
+            : 'Пока пусто';
+        cartItems.innerHTML = `<div style="text-align: center; padding: 20px; color: #666;">
+            <i class="fas fa-shopping-cart" style="font-size: 2em; margin-bottom: 10px; opacity: 0.5;"></i>
+            <p>${emptyText}</p>
+        </div>`;
+        
+        const totalText = currentLanguage === 'uk' ? 'Сума:' : 'Сумма:';
+        cartTotal.innerHTML = `<strong>${totalText} 0 ₴</strong>`;
+        cartCount.textContent = '0';
+        cartCount.style.display = 'none';
+        return;
+    }
+
+    let total = 0;
+    let itemCount = 0;
+    let html = '';
+
+    cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        itemCount += item.quantity;
+        
+        html += `
+            <div class="cart-item">
+                <div class="cart-item-info">
+                    <strong>${item.name}</strong><br>
+                    <small>${item.price} ₴ × ${item.quantity} = ${itemTotal} ₴</small>
+                </div>
+                <div class="cart-item-controls">
+                    <button class="quantity-btn" onclick="updateQuantity('${item.name}', -1)">-</button>
+                    <span style="min-width: 30px; text-align: center;">${item.quantity}</span>
+                    <button class="quantity-btn" onclick="updateQuantity('${item.name}', 1)">+</button>
+                    <button class="remove-item" onclick="removeFromCart('${item.name}')">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+        `;
+    });
+
+    cartItems.innerHTML = html;
+    const totalText = currentLanguage === 'uk' ? 'Сума:' : 'Сумма:';
+    cartTotal.innerHTML = `<strong>${totalText} ${total} ₴</strong>`;
+    cartCount.textContent = itemCount;
+    cartCount.style.display = 'inline';
+}
+
+// Обновление кнопки Viber в корзине
+function updateCartViberButton() {
+    const viberBtn = document.getElementById('cart-viber-btn');
+    const reminder = document.getElementById('cart-reminder');
+    
+    if (cart.length === 0) {
+        viberBtn.disabled = true;
+        viberBtn.innerHTML = `<i class="fab fa-viber"></i> <span class="lang" data-uk="Надіслати у Viber" data-ru="Отправить в Viber">Надіслати у Viber</span>`;
+        if (reminder) reminder.style.display = 'none';
+    } else {
+        viberBtn.disabled = false;
+        viberBtn.innerHTML = `<i class="fab fa-viber"></i> <span class="lang" data-uk="Надіслати замовлення" data-ru="Отправить заказ">Надіслати замовлення</span> (${cart.length} товарів)`;
+        if (reminder) reminder.style.display = 'block';
+    }
+}
+
+// Показать напоминание в корзине
+function showCartReminder() {
+    const reminder = document.getElementById('cart-reminder');
+    if (reminder) {
+        reminder.style.display = 'block';
+        
+        // Автоматически скрыть через 10 секунд
+        setTimeout(() => {
+            if (reminder) reminder.style.display = 'none';
+        }, 10000);
+    }
+}
+
+// Переключение корзины
+function toggleCart() {
+    const cartContainer = document.getElementById('cart-container');
+    cartVisible = !cartVisible;
+    cartContainer.classList.toggle('show');
+}
+
+// Временное отображение корзины
+function showCartTemporarily() {
+    const cartContainer = document.getElementById('cart-container');
+    cartVisible = true;
+    cartContainer.classList.add('show');
+    
+    setTimeout(() => {
+        if (cartVisible) {
+            cartVisible = false;
+            cartContainer.classList.remove('show');
+        }
+    }, 3000);
+}
+
+// Показать/скрыть описание товара
+function toggleDescription(button) {
+    const product = button.closest('.product');
+    const description = product.querySelector('.product-description');
+    const isVisible = description.style.display === 'block';
+    
+    // Закрыть все другие описания
+    document.querySelectorAll('.product-description').forEach(desc => {
+        if (desc !== description) {
+            desc.style.display = 'none';
+        }
+    });
+    
+    description.style.display = isVisible ? 'none' : 'block';
+    button.innerHTML = isVisible ? 
+        '<i class="fas fa-info-circle"></i>' : 
+        '<i class="fas fa-times"></i>';
+}
+
+// Фильтрация товаров
+function filterProducts(category) {
+    const products = document.querySelectorAll('.product');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    
+    // Обновление активных кнопок
+    filterButtons.forEach(btn => {
+        btn.classList.remove('active');
+        if ((category === 'all' && btn.textContent.includes(currentLanguage === 'uk' ? 'Всі' : 'Все')) ||
+            (category === 'new' && btn.textContent.includes('Новинки'))) {
+            btn.classList.add('active');
+        }
+    });
+    
+    products.forEach(product => {
+        if (category === 'all' || product.dataset.category.includes(category)) {
+            product.style.display = 'block';
+            setTimeout(() => {
+                product.style.opacity = '1';
+                product.style.transform = 'translateY(0)';
+            }, 100);
+        } else {
+            product.style.opacity = '0';
+            product.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                product.style.display = 'none';
+            }, 300);
+        }
+    });
+}
+
+// Показать уведомление
+function showNotification(message, type = 'success') {
+    // Удаляем старые уведомления
+    document.querySelectorAll('.notification').forEach(n => n.remove());
+    
+    const notification = document.createElement('div');
+    notification.className = 'notification';
+    notification.innerHTML = `
+        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+        <span>${message}</span>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.remove();
+        }
+    }, 3000);
+}
+
+// ГАЛЕРЕЯ
+function changePhoto(galleryId, index) {
+    const gallery = document.querySelector(`[data-gallery-id="${galleryId}"]`);
+    const images = gallery.querySelectorAll('img');
+    const buttons = gallery.parentElement.querySelectorAll('.gallery-btn');
+    
+    images.forEach(img => img.classList.remove('active'));
+    buttons.forEach(btn => btn.classList.remove('active'));
+    
+    images[index].classList.add('active');
+    buttons[index].classList.add('active');
+}
+
+function openGallery(galleryId, startIndex) {
+    const gallery = document.querySelector(`[data-gallery-id="${galleryId}"]`);
+    const images = gallery.querySelectorAll('img');
+    
+    // Просто переключаем фото
+    changePhoto(galleryId, startIndex);
+}
+
+// VIBER ЗАКАЗ - ОСНОВНАЯ ФУНКЦИЯ
+function sendViberOrder() {
+    if (cart.length === 0) {
+        showNotification(currentLanguage === 'uk' 
+            ? 'Кошик порожній! Додайте товари' 
+            : 'Корзина пуста! Добавьте товары', 'error');
+        return;
+    }
+
+    // Формируем текст заказа
+    let text = "🍇 ЗАМОВЛЕННЯ САДЖАНЦІВ ВИНОГРАДУ 🍇\n\n";
+    let total = 0;
+    
+    cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        text += `✅ ${item.name}\n`;
+        text += `   Кількість: ${item.quantity} шт.\n`;
+        text += `   Ціна: ${item.price} грн × ${item.quantity} = ${itemTotal} грн\n\n`;
+    });
+    
+    text += `💰 Загальна сума: ${total} грн\n\n`;
+    text += `👤 Моє ім'я: _______________\n`;
+    text += `📞 Мій телефон: _______________\n`;
+    text += `📍 Адреса для Нової Пошти: _______________\n\n`;
+    text += `💚 Дякую за замовлення!\n`;
+    text += `Геннадій\n\n`;
+    text += `📺 Мій YouTube: youtube.com/@gen_vin`;
+    
+    // Сохраняем текст заказа
+    currentOrderText = text;
+    
+    // Пытаемся скопировать в буфер
+    if (navigator.clipboard && window.isSecureContext) {
+        // Безопасный контекст (HTTPS)
+        navigator.clipboard.writeText(text).then(() => {
+            // Успешно скопировали
+            showViberModal();
+        }).catch(err => {
+            // Не удалось скопировать через Clipboard API
+            fallbackCopyToClipboard(text);
+        });
+    } else {
+        // Небезопасный контекст или старый браузер
+        fallbackCopyToClipboard(text);
+    }
+}
+
+// Резервный метод копирования
+function fallbackCopyToClipboard(text) {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    textArea.style.position = "fixed";
+    textArea.style.left = "-999999px";
+    textArea.style.top = "-999999px";
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    
+    try {
+        document.execCommand('copy');
+        showViberModal();
+    } catch (err) {
+        // Не удалось скопировать
+        showNotification(currentLanguage === 'uk' 
+            ? 'Не вдалося скопіювати текст. Спробуйте вручну.' 
+            : 'Не удалось скопировать текст. Попробуйте вручную.', 'error');
+        
+        // Показываем текст для ручного копирования
+        alert(currentLanguage === 'uk' 
+            ? 'Скопіюйте текст замовлення:\n\n' + text + '\n\nПотім вставте у Viber.' 
+            : 'Скопируйте текст заказа:\n\n' + text + '\n\nЗатем вставьте в Viber.');
+        return;
+    }
+    
+    document.body.removeChild(textArea);
+}
+
+// Показать модальное окно Viber
+function showViberModal() {
+    const modal = document.getElementById('viber-modal');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    
+    // Обновляем текст в модальном окне
+    const reminderText = document.querySelector('#viber-modal p');
+    if (reminderText) {
+        reminderText.textContent = currentLanguage === 'uk' 
+            ? 'Текст вже скопійовано у ваш буфер обміну' 
+            : 'Текст уже скопирован в ваш буфер обмена';
+    }
+}
+
+// Закрыть модальное окно
+function closeViberModal() {
+    const modal = document.getElementById('viber-modal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Перейти в Viber - ИСПРАВЛЕННАЯ ФУНКЦИЯ
+function proceedToViber() {
+    closeViberModal();
+    
+    // Используем правильную схему URL для Viber
+    const phone = "380683672422"; // Без плюса для viber://
+    
+    // Пробуем несколько вариантов открытия Viber
+    try {
+        // Вариант 1: Прямое открытие чата
+        const viberLink = `viber://chat?number=${phone}`;
+        
+        // Создаем временную ссылку для перехода
+        const tempLink = document.createElement('a');
+        tempLink.href = viberLink;
+        tempLink.target = '_blank';
+        tempLink.rel = 'noopener noreferrer';
+        document.body.appendChild(tempLink);
+        tempLink.click();
+        document.body.removeChild(tempLink);
+        
+        // Ждем немного и показываем инструкцию
+        setTimeout(() => {
+            const instructionText = currentLanguage === 'uk' 
+                ? 'Текст замовлення скопійовано!\n\nТепер вставте його у Viber:\n1. Відкрийте чат з Геннадієм (068 367 24 22)\n2. Натисніть і утримуйте поле для тексту\n3. Оберіть "Вставити"\n4. Натисніть "Надіслати"' 
+                : 'Текст заказа скопирован!\n\nТеперь вставьте его в Viber:\n1. Откройте чат с Геннадием (068 367 24 22)\n2. Нажмите и удерживайте поле для текста\n3. Выберите "Вставить"\n4. Нажмите "Отправить"';
+            
+            // Показываем всплывающее окно с инструкцией
+            const confirmInstruction = confirm(instructionText);
+            
+            // Если пользователь нажал "Отмена", показываем текст еще раз
+            if (!confirmInstruction) {
+                alert(currentLanguage === 'uk' 
+                    ? 'Текст замовлення для копіювання:\n\n' + currentOrderText.substring(0, 500) + '...' 
+                    : 'Текст заказа для копирования:\n\n' + currentOrderText.substring(0, 500) + '...');
+            }
+        }, 1500);
+        
+    } catch (error) {
+        // Если не удалось открыть Viber
+        console.error('Помилка відкриття Viber:', error);
+        
+        // Показываем альтернативную инструкцию
+        const alternativeInstruction = currentLanguage === 'uk' 
+            ? 'Не вдалося відкрити Viber автоматично.\n\n1. Відкрийте Viber вручну\n2. Знайдіть чат з "Геннадій" (068 367 24 22)\n3. Вставте скопійований текст та відправте' 
+            : 'Не удалось открыть Viber автоматически.\n\n1. Откройте Viber вручную\n2. Найдите чат с "Геннадий" (068 367 24 22)\n3. Вставьте скопированный текст и отправьте';
+        
+        alert(alternativeInstruction);
+    }
+}
+
+// Закрытие модального окна при клике вне его
+document.addEventListener('click', function(event) {
+    const modal = document.getElementById('viber-modal');
+    if (event.target === modal) {
+        closeViberModal();
+    }
+    
+    // Закрытие корзины при клике вне ее
+    const cartContainer = document.getElementById('cart-container');
+    const cartToggle = document.querySelector('.cart-toggle');
+    const youtubeButton = document.querySelector('.youtube-button');
+    
+    if (cartContainer && !cartContainer.contains(event.target) && 
+        cartToggle && !cartToggle.contains(event.target) && 
+        youtubeButton && !youtubeButton.contains(event.target)) {
+        cartVisible = false;
+        cartContainer.classList.remove('show');
+    }
+});
+
+// Закрытие по клавише ESC
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeViberModal();
+        
+        // Также закрываем корзину
+        const cartContainer = document.getElementById('cart-container');
+        if (cartContainer) {
+            cartVisible = false;
+            cartContainer.classList.remove('show');
+        }
+    }
+});
+
+// Обновление текста кнопок при изменении языка
+function updateCartViberButtonText() {
+    const viberBtn = document.getElementById('cart-viber-btn');
+    if (viberBtn) {
+        const span = viberBtn.querySelector('span');
+        if (span && span.classList.contains('lang')) {
+            const ukText = span.getAttribute('data-uk');
+            const ruText = span.getAttribute('data-ru');
+            if (ukText && ruText) {
+                span.textContent = currentLanguage === 'uk' ? ukText : ruText;
+            }
+        }
+    }
+}
+
+// При смене языка обновляем текст кнопок
+const originalChangeLanguage = changeLanguage;
+changeLanguage = function(lang) {
+    originalChangeLanguage(lang);
+    updateCartViberButtonText();
+};
+</script>
+
+</body>
+</html>
